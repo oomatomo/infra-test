@@ -1,0 +1,10 @@
+requires 'perl', '5.14.0';
+
+requires 'JSON::XS', '>= 0';
+requires 'Amon2::Lite', '>= 0';
+requires 'Plack::Runner','>= 0';
+requires 'Redis','>= 0';
+requires 'DBI','>= 0';
+requires 'DBD::mysql','>= 0';
+requires 'Log::Minimal','>= 0';
+
