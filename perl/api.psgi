@@ -12,6 +12,16 @@ my $redis = Redis->new(server => $ENV{TEST_REDIS}.':6379');
 my $dbh = DBI->connect($ENV{TEST_DB_URL}, 'infratest', 'infratest');
 my $key = 'click';
 
+any '/' => sub {
+  my $c = shift;
+  my $res = { status => "ok" };
+
+  return $c->create_response(
+    200, [],
+    [JSON::XS->new->utf8(0)->encode($res)]
+  );
+};
+
 any '/click' => sub {
   my $c   = shift;
   my $hashcode = $c->req->param('h');
