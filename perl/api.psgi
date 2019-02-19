@@ -21,7 +21,7 @@ any '/click' => sub {
     $sth->execute($hashcode) or confess $dbh->errstr();
     my $row = $sth->fetchrow_hashref();
     if ($row) {
-      $redis->rpush($key, $row->{hashcode});
+      $redis->rpush($key, $row->{media_id});
       $res = { status => "ok" };
     }
   }

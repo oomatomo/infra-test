@@ -28,7 +28,7 @@ sub queue {
     return;
   }
   if ($line !~ /\d+/) {
-    confess "not mtach number";
+    confess "not match number '$line'";
   }
   $_dbh->do('insert into click(media_id) values (?)', undef, $line) or confess $dbh->errstr;
   $_redis->lpop($key);
