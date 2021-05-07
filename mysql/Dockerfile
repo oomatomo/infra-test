@@ -6,7 +6,7 @@ ENV TZ=JST-9
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # install package
-RUN rpm -Uhv http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+RUN rpm -Uhv https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
 RUN yum update -y
 RUN yum install -y gcc gcc-c++ make ncurses-devel vim perl zlib-devel pcre-devel zip unzip perl-ExtUtils-Embed openldap-devel git vsftpd httpd cpan ntp ntpdate libxml2-devel ftp expat-devel libcurl-devel sharutils tmux openssl-devel libuuid-devel uuid uuid-devel uuidd m4 sendmail sendmail-cf
 RUN yum install -y wget tar
