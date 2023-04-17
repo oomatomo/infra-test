@@ -1,11 +1,10 @@
-FROM amazonlinux:2
+FROM amazonlinux:2023
 MAINTAINER oomatomo ooma0301@gmail.com
 
 # env
 ENV TZ JST-9
 
 # install package
-RUN rpm -Uhv https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
 RUN yum update -y
 RUN yum install -y gcc gcc-c++ perl make wget tar patch gzip
 
